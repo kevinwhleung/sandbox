@@ -52,10 +52,7 @@ git merge my_feature_branch
 # Feature branch, when done, should be deleted
 git branch -D my_feature_branch
 ```
-Otherwise, a pull request is needed:
-```
-git request-pull https://github.com/kleung2015/sandbox develop
-```
+Otherwise, a pull request is needed. Create a pull request on github.com. (Alternatively, use the [hub extension](https://hub.github.com/) package but we will leave that for another day.)
 
 Create a release branch for getting ready to ship/deploy:
 (The example below uses 0.1.0 as the target version.)
