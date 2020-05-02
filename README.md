@@ -23,6 +23,12 @@ git checkout -b develop
 git push origin develop
 ```
 
+Before proceeding further, the repo owner should set up branch protection rules in the repo's Settings under Branches:
+- Branch name pattern: [master,develop]*
+- Select "Require pull request reviews before merging"
+- Edit merge strategies to include only "Allow merge commits" (recommended)
+- Select "Include administrators" (recommended)
+
 Create a feature branch from the develop branch for feature development:
 ```
 git checkout develop
@@ -70,9 +76,4 @@ git checkout -b my_hotfix_branch
 ```
 Similar to release branches, hotfix branches are merged into both master and develop branches, and subsequently deleted.
 
-The repo owner sets up branch protection rules as follows:
-- Branch name pattern: [master,develop]*
-- Select "Require pull request reviews before merging"
-- Edit merge strategies to include ONLY "Allow merge commits" (recommended)
-- Select "Include administrators" (recommended)
 
