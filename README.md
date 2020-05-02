@@ -45,12 +45,16 @@ git add .
 git commit -m "my commit comments"
 ```
 
-Merge work from a feature branch into the develop branch:
+Merge work from a feature branch into the develop branch. Without branch protection, a simple `git checkout` and `git merge` will do
 ```
 git checkout develop
 git merge my_feature_branch
 # Feature branch, when done, should be deleted
 git branch -D my_feature_branch
+```
+Otherwise, a pull request is needed:
+```
+git request-pull https://github.com/kleung2015/sandbox develop
 ```
 
 Create a release branch for getting ready to ship/deploy:
