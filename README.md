@@ -40,18 +40,28 @@ Work in the feature branch and commit changes frequently so the  commits tell a 
 # This makes the feature branch the active branch in your environment
 # No need to run this if it is already the active branch
 git checkout my_feature_branch
-# Work, work, work, add, commit...
+# Work, work, work, add, commit
 git add .
 git commit -m "my commit comments"
+# Push to remote repo (Your changes still reside only locally. If your workstation goes kaput, you lose your work!)
+git push
 ```
 
-Merge work from a feature branch into the develop branch:
+Merge work from a feature branch into the develop branch. First, ensure your feature branch has the latest from the develop branch:
+```
+git pull origin develop
+```
+Resolve any merge conflicts, which would mean an additional commit.
+
+Without branch protection, a simple `git checkout` and `git merge` will do.
 ```
 git checkout develop
 git merge my_feature_branch
 # Feature branch, when done, should be deleted
 git branch -D my_feature_branch
 ```
+
+With branch protection, a pull request is needed. Create a pull request on github.com. (Alternatively, use the [hub extension](https://hub.github.com/) package but we will leave that for another day.)
 
 Create a release branch for getting ready to ship/deploy:
 (The example below uses 0.1.0 as the target version.)
